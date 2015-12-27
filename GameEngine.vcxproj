@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBBB2166-B999-4331-B913-DD5521DA8E80}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GameEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\VCWorkFolder\GameEngine\thirdparty\assimp-3.2\include;D:\VCWorkFolder\GameEngine\thirdparty\stb_image;D:\VCWorkFolder\GameEngine\thirdparty\glm-0.9.5\glm-0.9.5;D:\VCWorkFolder\GameEngine\thirdparty\glew-1.13.0\include\GL;D:\VCWorkFolder\GameEngine\thirdparty\glfw-3.0.4.bin.WIN32\include\GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\VCWorkFolder\GameEngine\thirdparty\assimp-3.2\lib;D:\VCWorkFolder\GameEngine\thirdparty\glew-1.13.0\lib\Release\Win32;D:\VCWorkFolder\GameEngine\thirdparty\glfw-3.0.4.bin.WIN32\lib-msvc110;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32s.lib;glfw3.lib;assimp-vc110-mtd.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\VCWorkFolder\GameEngine\thirdparty\assimp-3.1.1\include;D:\VCWorkFolder\GameEngine\thirdparty\stb_image;D:\VCWorkFolder\GameEngine\thirdparty\glm-0.9.5\glm-0.9.5;D:\VCWorkFolder\GameEngine\thirdparty\glew-1.13.0\include\GL;D:\VCWorkFolder\GameEngine\thirdparty\glfw-3.0.4.bin.WIN32\include\GLFW;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\VCWorkFolder\GameEngine\thirdparty\assimp-3.1.1\lib64;D:\VCWorkFolder\GameEngine\thirdparty\glew-1.13.0\lib\Release\Win32;D:\VCWorkFolder\GameEngine\thirdparty\glfw-3.0.4.bin.WIN32\lib-msvc110;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Engine\Camera.cpp" />
+    <ClCompile Include="src\Engine\GameEngine.cpp" />
+    <ClCompile Include="src\Engine\Input.cpp" />
+    <ClCompile Include="src\Engine\Mesh.cpp" />
+    <ClCompile Include="src\Engine\Model.cpp" />
+    <ClCompile Include="src\Engine\ResourceManager.cpp" />
+    <ClCompile Include="src\Engine\Scene.cpp" />
+    <ClCompile Include="src\Engine\SceneManager.cpp" />
+    <ClCompile Include="src\Engine\Shader.cpp" />
+    <ClCompile Include="src\Engine\Texture.cpp" />
+    <ClCompile Include="src\Engine\Vertex.cpp" />
+    <ClCompile Include="src\Game\BaseScene.cpp" />
+    <ClCompile Include="src\Game\main.cpp" />
+    <ClCompile Include="src\Game\TestSceneManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Engine\Camera.h" />
+    <ClInclude Include="src\Engine\GameEngine.h" />
+    <ClInclude Include="src\Engine\Input.h" />
+    <ClInclude Include="src\Engine\Mesh.h" />
+    <ClInclude Include="src\Engine\Model.h" />
+    <ClInclude Include="src\Engine\ResourceManager.h" />
+    <ClInclude Include="src\Engine\Scene.h" />
+    <ClInclude Include="src\Engine\SceneManager.h" />
+    <ClInclude Include="src\Engine\Shader.h" />
+    <ClInclude Include="src\Engine\Texture.h" />
+    <ClInclude Include="src\Engine\Vertex.h" />
+    <ClInclude Include="src\Game\BaseScene.h" />
+    <ClInclude Include="src\Game\TestSceneManager.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
