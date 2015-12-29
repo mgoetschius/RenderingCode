@@ -19,8 +19,6 @@ public:
 private:
 	Shader shader;
 	std::vector<Model> models;
-	Model model;
-	Model model2;
 	Camera camera;
 };
 

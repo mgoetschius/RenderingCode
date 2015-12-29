@@ -31,8 +31,11 @@ void GameEngine::Start()
 	glViewport(0, 0, GameEngine::windowWidth, GameEngine::windowHeight);
     glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 
-	glCullFace(GL_CW);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CCW);
 	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LEQUAL);
 
 	sceneManager->Init();
 

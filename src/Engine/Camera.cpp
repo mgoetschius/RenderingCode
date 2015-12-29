@@ -13,8 +13,8 @@ Camera::Camera(float fov, int width, int height, float zNear, float zFar)
 	UpdateCameraVectors();
 	viewMatrix = glm::lookAt(cameraPosition, cameraPosition-cameraForward, worldUp); 
 
-	moveSpeed = .2f;
-    rotationSpeed = 2.0f;
+	moveSpeed = .005f;
+    rotationSpeed = 0.05f;
 }
 
 void Camera::Init(float fov, int width, int height, float zNear, float zFar)
