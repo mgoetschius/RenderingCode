@@ -20,12 +20,15 @@ public:
 	void Render(Shader *shader);
 	void LoadMeshes(const char *meshPath);
 	glm::mat4 GetModelMatrix() { return modelMatrix; };
+	void SetOrientation(glm::quat Orientation) { orientation = Orientation; };
 	~Model(void);
 private:
 	std::vector<Mesh> meshes;
 	glm::vec3 translation;
 	glm::vec3 rotation;
 	glm::vec3 scale;
+	glm::quat orientation;
 	glm::mat4 modelMatrix;
+	int i;
 };
 

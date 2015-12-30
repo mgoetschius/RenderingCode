@@ -26,6 +26,7 @@ class Shader
         void AddUniform(const std::string &name);
         GLuint GetUniform(const std::string name);
         void UpdateUniform(const std::string &name, const glm::mat4 &matrix);
+		void UpdateUniform(const std::string &name, const glm::vec3 &vec);
         void UpdateUniform(const std::string &name, int &textureNumber);
         virtual ~Shader();
     protected:

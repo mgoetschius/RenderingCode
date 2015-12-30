@@ -1,5 +1,6 @@
 #include "Model.h"
 
+
 inline float DegToRad(float angDeg)
 {
 	return angDeg * 3.14159 * 2.0 / 360.0;
@@ -17,18 +18,30 @@ void Model::Init(const char *meshPath)
 	translation = glm::vec3(0.0);
 	rotation = glm::vec3(0.0);
 	scale = glm::vec3(1.0);
-
+	orientation = glm::quat(1,0,0,0);
+	i = 0;
 	Update();
 }
 
 void Model::Update()
 {
+	/*   eular angles rotation
 	modelMatrix = glm::mat4(1.0);
     modelMatrix = glm::translate(modelMatrix, translation);
     modelMatrix = glm::rotate(modelMatrix, DegToRad(rotation.x), glm::vec3(1,0,0));
     modelMatrix = glm::rotate(modelMatrix, DegToRad(rotation.y), glm::vec3(0,1,0));
     modelMatrix = glm::rotate(modelMatrix, DegToRad(rotation.z), glm::vec3(0,0,-1));
     modelMatrix = glm::scale(modelMatrix, scale);
+	*/
+
+	// quaternion rotation
+	modelMatrix = glm::mat4(1.0);
+	glm::mat4 transform(1.0);
+	transform = glm::translate(transform, translation);
+	glm::mat4 rot = glm::mat4_cast(orientation);
+	glm::mat4 s(1.0);
+	s = glm::scale(s, scale);
+	modelMatrix = transform * rot * s;
 }
 
 void Model::Render(Shader *shader)

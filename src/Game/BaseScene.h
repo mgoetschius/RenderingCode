@@ -20,5 +20,6 @@ private:
 	Shader shader;
 	std::vector<Model> models;
 	Camera camera;
+	Model c;
 };
 
