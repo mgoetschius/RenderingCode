@@ -85,6 +85,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine\Billboard.cpp" />
     <ClCompile Include="src\Engine\Camera.cpp" />
     <ClCompile Include="src\Engine\GameEngine.cpp" />
     <ClCompile Include="src\Engine\Input.cpp" />
@@ -101,6 +102,7 @@
     <ClCompile Include="src\Game\TestSceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Engine\Billboard.h" />
     <ClInclude Include="src\Engine\Camera.h" />
     <ClInclude Include="src\Engine\GameEngine.h" />
     <ClInclude Include="src\Engine\Input.h" />

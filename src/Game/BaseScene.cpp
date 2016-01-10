@@ -28,20 +28,21 @@ void BaseScene::Init()
 
 	Model m;
 	m.Init("./res/Models/groundplane.dae");
-	//models.push_back(m);
-	//Model c;
+	models.push_back(m);
+	Model c;
 	c.Init("./res/Models/cube.dae");
 	c.SetOrientation(glm::quat(1,0,0,0));
 	c.Update();
-	//models.push_back(c);
+	models.push_back(c);
+
+	billboard.Init("./res/Textures/billboard.png");
 }
 
 void BaseScene::Update(SceneManager *manager)
 {
 	camera.Update();
-	for(Model model : models)
+	for(Model &model : models)
 		model.Update();
-	c.Update();
 }
 
 void BaseScene::Render()
@@ -53,15 +54,14 @@ void BaseScene::Render()
 	shader.UpdateUniform("pMatrix", p);
 	shader.UpdateUniform("vMatrix", v);
 
-	for(Model model : models)
+	for(Model &model : models)
 	{
 		glm::mat4 mv = camera.getViewMatrix() * model.GetModelMatrix();
 		shader.UpdateUniform("mvMatrix", mv);
 		model.Render(&shader);
 	}
-	glm::mat4 mv = camera.getViewMatrix() * c.GetModelMatrix();
-	shader.UpdateUniform("mvMatrix", mv);
-	c.Render(&shader);
+	
+	billboard.Render(v, p);
 }
 
 

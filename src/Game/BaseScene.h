@@ -5,6 +5,8 @@
 #include "../Engine/Model.h"
 #include "../Engine/Camera.h"
 
+#include "../Engine/Billboard.h"
+
 #include <vector>
 
 class BaseScene :
@@ -20,6 +22,7 @@ private:
 	Shader shader;
 	std::vector<Model> models;
 	Camera camera;
-	Model c;
+
+	Billboard billboard;
 };
 

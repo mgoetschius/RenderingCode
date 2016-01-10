@@ -25,7 +25,8 @@ void Model::Init(const char *meshPath)
 
 void Model::Update()
 {
-	/*   eular angles rotation
+	/*
+	// eular angles rotation
 	modelMatrix = glm::mat4(1.0);
     modelMatrix = glm::translate(modelMatrix, translation);
     modelMatrix = glm::rotate(modelMatrix, DegToRad(rotation.x), glm::vec3(1,0,0));
